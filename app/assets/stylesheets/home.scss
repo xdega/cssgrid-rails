@@ -1,0 +1,63 @@
+// Begin Grid CSS
+@supports (grid-area: auto) {
+    @media screen and (min-width: 56em) {
+        .site {
+            display: grid;
+            grid-template-columns: 15em 1fr;
+            grid-template-rows: 1fr minmax(1em, auto);
+            grid-template-areas:
+            "header main"
+            "header sidebar"
+            "header footer";
+
+            @media screen and (min-width: 70em) {
+                grid-template-columns: 15em 1fr 15em;
+                grid-template-rows: 1fr minmax(1em, auto);
+                grid-template-areas:
+                "header main sidebar"
+                "header footer footer";
+            }
+        }
+        .site-header {
+            grid-area: header;
+        }
+        .site-main {
+            grid-area: main;
+        }
+        .widget-area {
+            grid-area: sidebar;
+        }
+        .site-footer {
+            grid-area: footer;
+        }
+    }
+}
+
+// Begin Non-Grid CSS
+* {
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.site-header, .site-main, .widget-area, .site-footer {
+    padding-left: 1rem;
+    padding-top: 1rem;
+    min-height: 2rem;
+}
+
+.site-header {
+    background-color: Tomato;
+}
+
+.site-main {
+    background-color: CornflowerBlue;
+    min-height: 20rem;
+}
+
+.widget-area {
+    background-color: SandyBrown;
+}
+
+.site-footer {
+    background-color: SteelBlue;
+}
